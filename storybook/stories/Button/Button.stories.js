@@ -13,6 +13,11 @@ storiesOf("Button", module)
       {text("Button text", "Hello Button")}
     </Button>
   ))
+  .add("with disabled true", () => (
+    <Button onPress={action("clicked-text")} disabled={true}>
+      {text("Button text", "Hello Button")}
+    </Button>
+  ))
   .add("with Button.Text", () => (
     <Button onPress={action("clicked-text")}>
       <Button.Text style={{ color: "red" }}>

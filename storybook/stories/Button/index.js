@@ -10,12 +10,19 @@ const styles = StyleSheet.create({
     padding: 16,
     justifyContent: "center",
   },
+  disabledContainer: {
+    backgroundColor: "lightgray",
+  },
   text: { color: "white" },
 });
 
-export default function Button({ children, ...rest }) {
+export default function Button({ children, disabled, ...rest }) {
   return (
-    <TouchableHighlight style={styles.container} {...rest}>
+    <TouchableHighlight
+      style={[styles.container, disabled && styles.disabledContainer]}
+      disabled={disabled}
+      {...rest}
+    >
       <Text style={styles.text}>{children}</Text>
     </TouchableHighlight>
   );
