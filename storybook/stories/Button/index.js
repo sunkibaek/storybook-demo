@@ -13,13 +13,15 @@ const styles = StyleSheet.create({
   text: { color: "white" },
 });
 
-export default function Button({ onPress, children, textStyle }) {
+export default function Button({ children, ...rest }) {
   return (
-    <TouchableHighlight onPress={onPress} style={styles.container}>
-      <Text style={[styles.text, textStyle]}>{children}</Text>
+    <TouchableHighlight style={styles.container} {...rest}>
+      <Text style={styles.text}>{children}</Text>
     </TouchableHighlight>
   );
 }
+
+Button.Text = Text;
 
 Button.defaultProps = {
   children: null,

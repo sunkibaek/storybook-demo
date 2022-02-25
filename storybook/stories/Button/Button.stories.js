@@ -13,11 +13,10 @@ storiesOf("Button", module)
       {text("Button text", "Hello Button")}
     </Button>
   ))
-  .add("with custom style", () => (
-    <Button
-      onPress={action("clicked-text")}
-      textStyle={{ color: "red", fontWeight: "bold" }}
-    >
-      {text("Button text", "Hello Button")}
+  .add("with Button.Text", () => (
+    <Button onPress={action("clicked-text")}>
+      <Button.Text style={{ color: "red" }}>
+        {text("Button text", "Hello Button")}
+      </Button.Text>
     </Button>
   ));
